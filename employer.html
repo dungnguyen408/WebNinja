@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employer</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link href="bootstrap-3.3.5/css/custom.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+</style>
+</head>
+<body>
+<nav id="navbar" class="navbar navbar-default navbar-inverse navbr-fixed-top" role="navigation">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="sr-only">Toggle nav </span>
+			<span class="icon-bar"> </span>
+			<span class="icon-bar"> </span>
+			<span class="icon-bar"> </span>
+		</button>
+		<a class="navbar-brand" href="home.html"> WebNinja </a>
+	</div>
+	<!-- Nav bar -->
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="nav navbar-nav">
+			<li><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+			<li><a href="employer.html">Employer</a></li>
+			<li><a href="info.html">Learning Portal</a></li>
+			<li><a href="resume/index.html">Interactive Resume</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		
+		
+		<!--Create a signup/login on top nav-->
+		<ul class="nav navbar-nav navbar-right">
+        <li><a href="registerationUser.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+	</div>
+</div>
+</nav>
+<!-- Jumobotron -->
+<div class="container">
+<div class="jumbotron" align="center">
+	<h1>Find the Best Candidate For Your Company</h1>
+</div>
+</div>
+<div class="container" >
+<h2> Why would benefit from using our Candidate form?</h2>
+<p> Have a hard time searching for the best candidate for your suited work place? The best way is to use our
+Candidate search form. Many students are currently looking to gain experience in their field. By joining WebNinja,
+we find the best ways to meet their needs. Students create a user page and add their information and experience 
+to have a higher chance of searching for jobs. So what better way to find the best candidate for your work environment than by
+checking student's qualifications and experience. </p>
+
+</div>
+<br>
+<br>
+<br>
+<!-- The form to get candidate -->
+<div class="container" align="center">
+<div class="panel panel-primary">
+	<h1 class="panel-title">Hire Right Candidate! </h1>
+	<form name="form" class="form-group" role="form" action="process.php" method="post" onsubmit="return validate(this)">
+		<div class="form-group">
+			<label for="inputLookingFor" >Looking For:</label>
+			<select class="form-control" id="pos" name="pos">
+			<option value="Software">Software</option>
+			<option value="Hardware">Hardware</option>
+			<option value="Testing">Testing</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="fcgorexp">Select as applicable: </label>
+			<label class="radio-inline">
+			<input type="radio" value="fcg" name="fcgorexp" checked> Fresh Graduate</label>
+			<label class="radio-inline">
+			<input type="radio" value="fcg" name="fcgorexp"> Experienced</label>
+		</div>
+		<div class="form-group">
+			<label for="cgpa" >Input Min.CGPA</label>
+			<input type="mincgpa" class="form-control" id="cgpa" placeholder="CGPA" name="cgpa" required>
+		</div>
+		<div class="form-group">
+			<label for="deg">Education: </label>
+			<label class="radio-inline">
+			<input type="radio" value="Undergraduate" name="deg" checked> Undergraduate</label>
+			<label class="radio-inline">
+			<input type="radio" value="Graduate" name="deg"> Graduate</label>
+		</div>
+		<div class="form-group">
+				<button type="submit" value="Submit" class="btn">Submit</button>
+				<button type="reset" value="Reset" class="btn">Reset</button>
+		</div>
+	</form>
+</div>
+</div>
+
+	
+	
+	<hr>
+	<div class="row">
+		<div class="col-xs-12">
+			<footer>
+				<p class="pull-right"><a href="#">Back to top</a></p>
+			<p>&copy; 2015 Web Ninja, Inc. </p>
+			</footer>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+function validate()
+ {
+  var cgpa = form.cgpa.value;
+  if (/[2-4]/.test(cgpa)) 
+  {
+      return true;
+  }
+  else
+  {
+     document.getElementById("cgpaError").style.visibility = "visible";
+     return false;
+  }
+ }
+
+</script>
+</html>

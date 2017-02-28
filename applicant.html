@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Applicant</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link href="bootstrap-3.3.5/css/custom.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+<script>
+	function validate(form)
+	{
+
+		var x = document.forms["myForm"]["inputJob"].value;
+		var y = document.forms["myForm"]["inputLocation"].value;
+		
+		if ((x == null || x == "") && (y == null || y == "")) {
+        alert("At least one field must be filled out.  Please try again.");
+        return false;
+		}
+	}
+</script>
+</head>
+<body>
+<nav id="navbar" class="navbar navbar-default navbar-inverse navbr-fixed-top" role="navigation">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="sr-only">Toggle nav </span>
+			<span class="icon-bar"> </span>
+			<span class="icon-bar"> </span>
+			<span class="icon-bar"> </span>
+		</button>
+		<a class="navbar-brand" href="home.html"> WebNinja </a>
+	</div>
+	<!-- Nav bar -->
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="nav navbar-nav">
+			<li><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+			
+			<li><a href="employer.html">Employer</a></li>
+			<li><a href="info.html">Learning Portal</a></li>
+			<li><a href="resume/index.html">Interactive Resume</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		
+		<!--Create a signup/login on top nav-->
+		<ul class="nav navbar-nav navbar-right">
+        <li><a href="registerationUser.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+	</div>
+</div>
+</nav>
+
+
+<div class="container" align="center">
+<div class="panel panel-primary">
+	<h1 class="panel-title">Job Search</h1>
+	<form name="myForm" class="form-group" role="form" method="post" onsubmit = "return validate(this);">
+		
+		<div class="form-group">
+			<label for="Job Title" class="sr-only">Job Position</label>
+			<input type="job" class="form-control" id="inputJob" placeholder="Enter Desired Job Position">
+		</div>
+		<div class="form-group">
+			<label for="Location" class="sr-only">Job Location</label>
+			<input type="location" class="form-control" id="inputLocation" placeholder="Enter Desired Location">
+		</div>
+		<div class="form-group">
+				<button type="submit" class="btn" name="search" id="search">Submit</button>
+		</div>
+	</form>
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container" align="center">
+	
+	<p id="position"style="color:black; font-family:verdana; font-size:20px" align="center">Below is a list of available positions<p>
+
+	</div>
+	<div id="placeholder" align="center">
+
+	</div>
+    <script>
+var data={"jobs": [
+  {"position": "Software Engineer",
+            "location": "San Jose",
+            "experience": "2 years of experience needed",
+			"description": "Software Engineer position open for a fortune 500 company.  Must be proficient in Java, Perl, Python, and RDBM systems."},
+  { "position": "Desktop Applications Software Engineer",
+            "location": "San Francisco",
+            "experience": "5 years of experience needed of experience needed",
+			"description": "Software Engineer position open for a fortune 500 company.  Must be proficient in Java, Perl, Python, and RDBM systems."},
+  {"position": "Software QA Engineer",
+            "location": "Santa Clara",
+            "experience": "3 years of experience needed",
+			"description": "Software QA Engineer position open for a fortune 500 company.  Must know web programming languages, Java, SQL, and automation tools."},
+  {"position": "Web Developer",
+            "location": "Mountain View",
+            "experience": "3 years of experience needed",
+			"description": "Web Developer position for a startup.  Must know web programming languages and Linux."},
+  {"position": "Front End Developer",
+            "location": "San Carlos",
+            "experience": "5 years of experience needed",
+			"description": "Front-end Developer position for a startup.  Must know web programming languages, Java, SQL and Linux."},
+  {"position": "Backend Developer",
+            "location": "Palo Alto",
+            "experience": "3 years of experience needed",
+			"description": "Backend Developer position for a fortune 500 company.  Must know web programming languages, scripting languages, and Linux."},
+  {"position": "Software Architect",
+            "location": "Oakland",
+            "experience": "6 years of experience needed",
+			"description": "Software Developer position for a fortune 500 company.  Must know C, Shell, Object Oriented Programming and Linux."}
+			
+]}
+
+var output="<ul>";
+for (var i in data.jobs) {
+    output+="<li><b>Position:</b> " + data.jobs[i].position + " in " + data.jobs[i].location + "<br><b>Details:</b> " + data.jobs[i].experience + ".<br> " + data.jobs[i].description + " " +"</li>";
+}
+
+output+="</ul>";
+document.getElementById("placeholder").innerHTML=output;
+    </script>
+	
+	
+</div>
+
+<br><br><br><br><br><br>
+<footer>
+			<p class="pull-right"><a href="#">Back to top</a></p>
+			<p>&copy; 2015 Web Ninja, Inc. </p>
+			</footer>
+
+</body>
+		
+		
+</html>
